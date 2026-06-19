@@ -1,0 +1,18 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+  </Configurations>
+  <Folder Name="/Solution Items/">
+    <File Path="images/MainForm.png" />
+    <File Path="images/SettingsForm.png" />
+    <File Path="LICENSE.txt" />
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="Stonks-Setup/Stonks-Setup.vdproj" Type="Installer">
+    <Build />
+  </Project>
+  <Project Path="Stonks/Stonks.csproj" Id="c8d3efa1-cc4b-49ea-9fdf-4e2996e37a40">
+    <Platform Solution="*|x64" Project="x64" />
+  </Project>
+</Solution>

@@ -1,0 +1,89 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Stonks.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="WindowBounds" Type="System.Drawing.Rectangle" Scope="User">
+      <Value Profile="(Default)">0, 0, 0, 0</Value>
+    </Setting>
+    <Setting Name="ColumnWidths" Type="System.String" Scope="User">
+      <Value Profile="(Default)">62,204,74,75,57,93,55,82,55,82,74,75</Value>
+    </Setting>
+    <Setting Name="EncryptedApiKey" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="LogDirectory" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="VerboseLogging" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="PollingInterval" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="StockDefinitions" Type="System.String" Scope="User">
+      <Value Profile="(Default)">&lt;ArrayOfStockDefinition&gt;
+  &lt;StockDefinition&gt;
+    &lt;Symbol&gt;AAPL&lt;/Symbol&gt;
+    &lt;Shares&gt;0&lt;/Shares&gt;
+    &lt;PricePaid&gt;0.00&lt;/PricePaid&gt;
+    &lt;Notes&gt;Sample-01&lt;/Notes&gt;
+    &lt;Chart&gt;true&lt;/Chart&gt;
+  &lt;/StockDefinition&gt;
+  &lt;StockDefinition&gt;
+    &lt;Symbol&gt;AMD&lt;/Symbol&gt;
+    &lt;Shares&gt;100.00&lt;/Shares&gt;
+    &lt;PricePaid&gt;200&lt;/PricePaid&gt;
+    &lt;Notes&gt;Sample-02&lt;/Notes&gt;
+    &lt;Chart&gt;true&lt;/Chart&gt;
+  &lt;/StockDefinition&gt;
+  &lt;StockDefinition&gt;
+    &lt;Symbol&gt;INTC&lt;/Symbol&gt;
+    &lt;Shares&gt;0&lt;/Shares&gt;
+    &lt;PricePaid&gt;0&lt;/PricePaid&gt;
+    &lt;Notes&gt;Sample-03&lt;/Notes&gt;
+    &lt;Chart&gt;true&lt;/Chart&gt;
+  &lt;/StockDefinition&gt;
+  &lt;StockDefinition&gt;
+    &lt;Symbol&gt;MSFT&lt;/Symbol&gt;
+    &lt;Shares&gt;100&lt;/Shares&gt;
+    &lt;PricePaid&gt;200&lt;/PricePaid&gt;
+    &lt;Notes&gt;Sample-04&lt;/Notes&gt;
+    &lt;Chart&gt;true&lt;/Chart&gt;
+  &lt;/StockDefinition&gt;
+  &lt;StockDefinition&gt;
+    &lt;Symbol&gt;NVDA&lt;/Symbol&gt;
+    &lt;Shares&gt;100&lt;/Shares&gt;
+    &lt;PricePaid&gt;150&lt;/PricePaid&gt;
+    &lt;Notes&gt;Sample-05&lt;/Notes&gt;
+    &lt;Chart&gt;true&lt;/Chart&gt;
+  &lt;/StockDefinition&gt;
+  &lt;StockDefinition&gt;
+    &lt;Symbol&gt;SPCX&lt;/Symbol&gt;
+    &lt;Shares&gt;100&lt;/Shares&gt;
+    &lt;PricePaid&gt;200&lt;/PricePaid&gt;
+    &lt;Notes&gt;Sample-06&lt;/Notes&gt;
+    &lt;Chart&gt;true&lt;/Chart&gt;
+  &lt;/StockDefinition&gt;
+  &lt;StockDefinition&gt;
+    &lt;Symbol&gt;BTC/USD&lt;/Symbol&gt;
+    &lt;Shares&gt;0&lt;/Shares&gt;
+    &lt;PricePaid&gt;0&lt;/PricePaid&gt;
+    &lt;Notes&gt;Sample-07&lt;/Notes&gt;
+    &lt;Chart&gt;false&lt;/Chart&gt;
+  &lt;/StockDefinition&gt;
+&lt;/ArrayOfStockDefinition&gt;</Value>
+    </Setting>
+    <Setting Name="ChartDirectory" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="DisplayCharts" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ChartValues" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="LogType" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
