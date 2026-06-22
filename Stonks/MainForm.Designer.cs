@@ -75,6 +75,7 @@ namespace Stonks
             this.timer_ClockTitle = new System.Windows.Forms.Timer(this.components);
             this.timer_Chart = new System.Windows.Forms.Timer(this.components);
             this.chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.toolStripStatusLabel_AvgPercentChange = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip_1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_StockList)).BeginInit();
             this.menuStrip_1.SuspendLayout();
@@ -91,6 +92,7 @@ namespace Stonks
             this.statusStrip_1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.statusStrip_1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel_Value,
+            this.toolStripStatusLabel_AvgPercentChange,
             this.toolStripStatusLabel_Paid,
             this.toolStripStatusLabel_Gain});
             this.statusStrip_1.Location = new System.Drawing.Point(0, 646);
@@ -402,8 +404,20 @@ namespace Stonks
             this.chart.TabIndex = 0;
             this.chart.Text = "chart1";
             this.chart.Visible = global::Stonks.Properties.Settings.Default.DisplayCharts;
-            this.chart.MouseLeave += new System.EventHandler(this.chart_MouseLeave);
-            this.chart.MouseMove += new System.Windows.Forms.MouseEventHandler(this.chart_MouseMove);
+            this.chart.MouseLeave += new System.EventHandler(this.Chart_MouseLeave);
+            this.chart.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Chart_MouseMove);
+            // 
+            // toolStripStatusLabel_AvgPercentChange
+            // 
+            this.toolStripStatusLabel_AvgPercentChange.AutoSize = false;
+            this.toolStripStatusLabel_AvgPercentChange.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.toolStripStatusLabel_AvgPercentChange.BorderStyle = System.Windows.Forms.Border3DStyle.Bump;
+            this.toolStripStatusLabel_AvgPercentChange.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel_AvgPercentChange.Name = "toolStripStatusLabel_AvgPercentChange";
+            this.toolStripStatusLabel_AvgPercentChange.Size = new System.Drawing.Size(185, 24);
+            this.toolStripStatusLabel_AvgPercentChange.Text = "Avg %Change: 0.00%";
             // 
             // MainForm
             // 
@@ -463,5 +477,6 @@ namespace Stonks
         private DataGridViewTextBoxColumn col52High;
         private DataGridViewTextBoxColumn col52Low;
         private DataGridViewTextBoxColumn colNotes;
+        private ToolStripStatusLabel toolStripStatusLabel_AvgPercentChange;
     }
 }

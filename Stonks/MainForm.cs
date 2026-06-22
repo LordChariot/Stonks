@@ -77,7 +77,7 @@ namespace Stonks
                 }
                 toolStripComboBox_ChartValues.SelectedIndex = Properties.Settings.Default.ChartValues;
 
-                toolStripStatusLabel_Value.Width = toolStripStatusLabel_Gain.Width = toolStripStatusLabel_Paid.Width = (statusStrip_1.Width - 20) / 3;
+                toolStripStatusLabel_Value.Width = toolStripStatusLabel_Gain.Width = toolStripStatusLabel_Paid.Width = toolStripStatusLabel_AvgPercentChange.Width = (statusStrip_1.Width - 20) / 4;
                 Logger.LogDebug("MainForm_Load: completed");
             }
             catch { }
@@ -92,7 +92,7 @@ namespace Stonks
 
         private void MainForm_ResizeEnd(object sender, EventArgs e)
         {
-            toolStripStatusLabel_Value.Width = toolStripStatusLabel_Gain.Width = toolStripStatusLabel_Paid.Width = (statusStrip_1.Width - 20) / 3;
+            toolStripStatusLabel_Value.Width = toolStripStatusLabel_Gain.Width = toolStripStatusLabel_Paid.Width = toolStripStatusLabel_AvgPercentChange.Width = (statusStrip_1.Width - 20) / 4;
         }
 
         private void Timer_Chart_Tick(object sender, EventArgs e)
@@ -373,6 +373,8 @@ namespace Stonks
             decimal _sumValue = 0;
             decimal _sumGain = 0;
             decimal _sumPaid = 0;
+            decimal _sumAvgPercentChange = 0;
+            int _countEnabled = 0;
             var _time = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
             foreach (var _stock in stocks)
             {
@@ -397,17 +399,20 @@ namespace Stonks
                 _sumValue += _stock.CurrentPrice * _stock.Shares;
                 _sumGain += _stock.Gain;
                 _sumPaid += _stock.PricePaid * _stock.Shares;
-
-             
-
-                toolStripStatusLabel_Value.Text = $"Total Value: {_sumValue:N2}";
-                toolStripStatusLabel_Gain.Text = $"Total Gain: {_sumGain:N2}";
-                toolStripStatusLabel_Paid.Text = $"Total Paid: {_sumPaid:N2}";
+                if (_stock.Chart)
+                {
+                    _sumAvgPercentChange += _stock.PercentChange;
+                    _countEnabled++;
+                }
             }
+            toolStripStatusLabel_Value.Text = $"Total Value: {_sumValue:N2}";
+            toolStripStatusLabel_AvgPercentChange.Text = _countEnabled > 0 ? $"Average %Change: {(_sumAvgPercentChange / _countEnabled):+0.00;-0.00;0.00}%" : $"Average %Change: 0.00%";
+            toolStripStatusLabel_Gain.Text = $"Total Gain: {_sumGain:N2}";
+            toolStripStatusLabel_Paid.Text = $"Total Paid: {_sumPaid:N2}";
             dataGridView_StockList.ClearSelection();
         }
 
-        private void chart_MouseMove(object sender, MouseEventArgs e)
+        private void Chart_MouseMove(object sender, MouseEventArgs e)
         {
             var _hitTest = chart.HitTest(e.X, e.Y);
             if (_hitTest != null && _hitTest.ChartElementType == ChartElementType.LegendItem && _hitTest.Series != null)
@@ -415,21 +420,22 @@ namespace Stonks
                 var _selectedSeries = _hitTest.Series;
                 if (_highlightedSeries != _selectedSeries)
                 {
-                    Restore();
-                    Highlight(_selectedSeries);
+                    Restore_Series();
+                    Highlight_Series(_selectedSeries);
                 }
             }
             else
             {
-                Restore();
+                Restore_Series();
             }
         }
 
-        private void chart_MouseLeave(object sender, EventArgs e)
+        private void Chart_MouseLeave(object sender, EventArgs e)
         {
-            Restore();
+            Restore_Series();
         }
-        private void Highlight(Series selectedSeries)
+       
+        private void Highlight_Series(Series selectedSeries)
         {
             _highlightedSeries = selectedSeries;
             foreach (var series in chart.Series)
@@ -478,7 +484,7 @@ namespace Stonks
             }
         }
 
-        private void Restore()
+        private void Restore_Series()
         {
             if (_highlightedSeries == null) return;
             foreach (var series in chart.Series)
@@ -490,11 +496,11 @@ namespace Stonks
                     series.BackHatchStyle = ChartHatchStyle.None;
                 }
             }
-            foreach(DataGridViewRow _row in dataGridView_StockList.Rows)
+            foreach (DataGridViewRow _row in dataGridView_StockList.Rows)
             {
                 _row.DefaultCellStyle.BackColor = Color.Empty;
                 _row.DefaultCellStyle.ForeColor = Color.Empty;
-            }            
+            }
             _origBorderWidth.Clear();
             _origMarkerSize.Clear();
             _highlightedSeries = null;

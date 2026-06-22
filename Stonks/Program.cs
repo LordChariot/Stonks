@@ -12,7 +12,13 @@ namespace Stonks
         static void Main()
         {
             bool isFirstInstance;
+#if DEBUG
+            const string mutexName = "£ordÇhariot_StonksAppMutex_{e2e2e2e2-e2e2-e2e2-e2e2-e2e2e2e2e2e2-DEBUG}";
+#else
             const string mutexName = "£ordÇhariot_StonksAppMutex_{e2e2e2e2-e2e2-e2e2-e2e2-e2e2e2e2e2e2}";
+#endif
+
+            //const string mutexName = "£ordÇhariot_StonksAppMutex_{e2e2e2e2-e2e2-e2e2-e2e2-e2e2e2e2e2e2}";
             using (var mutex = new System.Threading.Mutex(true, mutexName, out isFirstInstance))
             {
                 if (!isFirstInstance)
