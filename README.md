@@ -5,7 +5,7 @@ The project is built using .NET Framework (4.8.1) and C# on Visual Studio 2026.
 It allows users to track their favorite stocks in real-time, with options for customization. 
 The project is open-source and available on GitHub for anyone interested in using it for their own purposes.
 
-MainForm is the main interface where users can view their stock list, add new stocks, and see various charts and logs related to their stock performance.
+MainForm is the main interface where users can view their stock list, and see various charts related to their stock performance.
 
 ![Stonks Screenshot](images/MainForm.png) 
 
