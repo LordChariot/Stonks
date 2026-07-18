@@ -58,14 +58,14 @@
             this.toolStripMenuItem_OpenFolder});
             this.toolStripMenuItem_File.Name = "toolStripMenuItem_File";
             this.toolStripMenuItem_File.Size = new System.Drawing.Size(37, 23);
-            this.toolStripMenuItem_File.Text = "File";
+            this.toolStripMenuItem_File.Text = "&File";
             // 
             // toolStripMenuItem_OpenFolder
             // 
             this.toolStripMenuItem_OpenFolder.Image = global::Stonks.Properties.Resources.OpenFolder;
             this.toolStripMenuItem_OpenFolder.Name = "toolStripMenuItem_OpenFolder";
             this.toolStripMenuItem_OpenFolder.Size = new System.Drawing.Size(218, 22);
-            this.toolStripMenuItem_OpenFolder.Text = "Open Folder in File Explorer";
+            this.toolStripMenuItem_OpenFolder.Text = "&Open Folder in File Explorer";
             this.toolStripMenuItem_OpenFolder.Click += new System.EventHandler(this.ToolStripMenuItem_OpenFolder_Click);
             // 
             // toolStripMenuItem_Refresh
@@ -73,7 +73,7 @@
             this.toolStripMenuItem_Refresh.Image = global::Stonks.Properties.Resources.RefreshScript;
             this.toolStripMenuItem_Refresh.Name = "toolStripMenuItem_Refresh";
             this.toolStripMenuItem_Refresh.Size = new System.Drawing.Size(74, 23);
-            this.toolStripMenuItem_Refresh.Text = "Refresh";
+            this.toolStripMenuItem_Refresh.Text = "&Refresh";
             this.toolStripMenuItem_Refresh.Click += new System.EventHandler(this.ToolStripMenuItem_Refresh_Click);
             // 
             // toolStripMenuItem_Wrap
@@ -81,7 +81,7 @@
             this.toolStripMenuItem_Wrap.Image = global::Stonks.Properties.Resources.WrapPanel;
             this.toolStripMenuItem_Wrap.Name = "toolStripMenuItem_Wrap";
             this.toolStripMenuItem_Wrap.Size = new System.Drawing.Size(63, 23);
-            this.toolStripMenuItem_Wrap.Text = "Wrap";
+            this.toolStripMenuItem_Wrap.Text = "&Wrap";
             this.toolStripMenuItem_Wrap.Click += new System.EventHandler(this.ToolStripMenuItem_Wrap_Click);
             // 
             // comboBox_LogType

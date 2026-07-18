@@ -46,6 +46,7 @@ namespace Stonks
             this.tooltip = new System.Windows.Forms.ToolTip(this.components);
             this.statusStrip_1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel_Value = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel_AvgPercentChange = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel_Paid = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel_Gain = new System.Windows.Forms.ToolStripStatusLabel();
             this.dataGridView_StockList = new System.Windows.Forms.DataGridView();
@@ -75,7 +76,6 @@ namespace Stonks
             this.timer_ClockTitle = new System.Windows.Forms.Timer(this.components);
             this.timer_Chart = new System.Windows.Forms.Timer(this.components);
             this.chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.toolStripStatusLabel_AvgPercentChange = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip_1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_StockList)).BeginInit();
             this.menuStrip_1.SuspendLayout();
@@ -113,6 +113,18 @@ namespace Stonks
             this.toolStripStatusLabel_Value.Size = new System.Drawing.Size(191, 24);
             this.toolStripStatusLabel_Value.Text = "Total Value: 0,000,000.00";
             this.toolStripStatusLabel_Value.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // toolStripStatusLabel_AvgPercentChange
+            // 
+            this.toolStripStatusLabel_AvgPercentChange.AutoSize = false;
+            this.toolStripStatusLabel_AvgPercentChange.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.toolStripStatusLabel_AvgPercentChange.BorderStyle = System.Windows.Forms.Border3DStyle.Bump;
+            this.toolStripStatusLabel_AvgPercentChange.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel_AvgPercentChange.Name = "toolStripStatusLabel_AvgPercentChange";
+            this.toolStripStatusLabel_AvgPercentChange.Size = new System.Drawing.Size(185, 24);
+            this.toolStripStatusLabel_AvgPercentChange.Text = "Avg %Change: 0.00%";
             // 
             // toolStripStatusLabel_Paid
             // 
@@ -312,43 +324,43 @@ namespace Stonks
             this.toolStripMenuItem_File.Image = global::Stonks.Properties.Resources.WindowsFormToolBox;
             this.toolStripMenuItem_File.Name = "toolStripMenuItem_File";
             this.toolStripMenuItem_File.Size = new System.Drawing.Size(73, 23);
-            this.toolStripMenuItem_File.Text = "System";
+            this.toolStripMenuItem_File.Text = "&System";
             // 
             // toolStripMenuItem_Settings
             // 
             this.toolStripMenuItem_Settings.Image = global::Stonks.Properties.Resources.Settings;
             this.toolStripMenuItem_Settings.Name = "toolStripMenuItem_Settings";
-            this.toolStripMenuItem_Settings.Size = new System.Drawing.Size(132, 22);
-            this.toolStripMenuItem_Settings.Text = "Settings";
+            this.toolStripMenuItem_Settings.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem_Settings.Text = "Se&ttings";
             this.toolStripMenuItem_Settings.Click += new System.EventHandler(this.ToolStripMenuItem_Settings_Click);
             // 
             // toolStripMenuItem_LogViewer
             // 
             this.toolStripMenuItem_LogViewer.Image = global::Stonks.Properties.Resources.Log;
             this.toolStripMenuItem_LogViewer.Name = "toolStripMenuItem_LogViewer";
-            this.toolStripMenuItem_LogViewer.Size = new System.Drawing.Size(132, 22);
-            this.toolStripMenuItem_LogViewer.Text = "Log Viewer";
+            this.toolStripMenuItem_LogViewer.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem_LogViewer.Text = "&Log Viewer";
             this.toolStripMenuItem_LogViewer.Click += new System.EventHandler(this.ToolStripMenuItem_LogViewer_Click);
             // 
             // toolStripMenuItem_About
             // 
             this.toolStripMenuItem_About.Image = global::Stonks.Properties.Resources.AboutBox;
             this.toolStripMenuItem_About.Name = "toolStripMenuItem_About";
-            this.toolStripMenuItem_About.Size = new System.Drawing.Size(132, 22);
-            this.toolStripMenuItem_About.Text = "About";
+            this.toolStripMenuItem_About.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem_About.Text = "&About";
             this.toolStripMenuItem_About.Click += new System.EventHandler(this.ToolStripMenuItem_About_Click);
             // 
             // toolStripSeparator_1
             // 
             this.toolStripSeparator_1.Name = "toolStripSeparator_1";
-            this.toolStripSeparator_1.Size = new System.Drawing.Size(129, 6);
+            this.toolStripSeparator_1.Size = new System.Drawing.Size(177, 6);
             // 
             // toolStripMenuItem_Exit
             // 
             this.toolStripMenuItem_Exit.Image = global::Stonks.Properties.Resources.Exit;
             this.toolStripMenuItem_Exit.Name = "toolStripMenuItem_Exit";
-            this.toolStripMenuItem_Exit.Size = new System.Drawing.Size(132, 22);
-            this.toolStripMenuItem_Exit.Text = "Exit";
+            this.toolStripMenuItem_Exit.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem_Exit.Text = "E&xit";
             this.toolStripMenuItem_Exit.Click += new System.EventHandler(this.ToolStripMenuItem_Exit_Click);
             // 
             // toolStripMenuItem_Refresh
@@ -356,7 +368,7 @@ namespace Stonks
             this.toolStripMenuItem_Refresh.Image = global::Stonks.Properties.Resources.Refresh;
             this.toolStripMenuItem_Refresh.Name = "toolStripMenuItem_Refresh";
             this.toolStripMenuItem_Refresh.Size = new System.Drawing.Size(102, 23);
-            this.toolStripMenuItem_Refresh.Text = "Refresh Now";
+            this.toolStripMenuItem_Refresh.Text = "&Refresh Now";
             this.toolStripMenuItem_Refresh.Click += new System.EventHandler(this.ToolStripMenuItem_RefreshTool_Click);
             // 
             // toolStripMenuItem_Chart
@@ -364,7 +376,7 @@ namespace Stonks
             this.toolStripMenuItem_Chart.Image = global::Stonks.Properties.Resources.linechart;
             this.toolStripMenuItem_Chart.Name = "toolStripMenuItem_Chart";
             this.toolStripMenuItem_Chart.Size = new System.Drawing.Size(64, 23);
-            this.toolStripMenuItem_Chart.Text = "Chart";
+            this.toolStripMenuItem_Chart.Text = "&Chart";
             this.toolStripMenuItem_Chart.Click += new System.EventHandler(this.ToolStripMenuItem_Chart_Click);
             // 
             // toolStripComboBox_ChartValues
@@ -406,18 +418,6 @@ namespace Stonks
             this.chart.Visible = global::Stonks.Properties.Settings.Default.DisplayCharts;
             this.chart.MouseLeave += new System.EventHandler(this.Chart_MouseLeave);
             this.chart.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Chart_MouseMove);
-            // 
-            // toolStripStatusLabel_AvgPercentChange
-            // 
-            this.toolStripStatusLabel_AvgPercentChange.AutoSize = false;
-            this.toolStripStatusLabel_AvgPercentChange.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
-            this.toolStripStatusLabel_AvgPercentChange.BorderStyle = System.Windows.Forms.Border3DStyle.Bump;
-            this.toolStripStatusLabel_AvgPercentChange.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripStatusLabel_AvgPercentChange.Name = "toolStripStatusLabel_AvgPercentChange";
-            this.toolStripStatusLabel_AvgPercentChange.Size = new System.Drawing.Size(185, 24);
-            this.toolStripStatusLabel_AvgPercentChange.Text = "Avg %Change: 0.00%";
             // 
             // MainForm
             // 
